@@ -28,22 +28,28 @@ However, the technical limitations became a bottleneck anyway - it was not possi
 
 ## How to Use the Program
 ### Training the model
-1. Put a `raw.tsv` dataset into the `/data/` folder. It must contain a `reference` column (with toxic sentences) and a `translation` column (with their non-toxic equivalents). Optionally, there can be `ref_tox` and `trn_tox` which show the numerical value of toxicity in the reference and translation sentences; I use them because in the original Scoltech dataset some of the sentences are placed incorrectly.
+1. Put a `raw.tsv` dataset into the `/data/` folder. It must contain a `reference` column (with toxic sentences) and a `translation` column (with their non-toxic equivalents).
 2. Open the terminal in the root folder of the project.
 3. Type `sh script.sh train <model_name>` to train the model. You can specify the model name to create and use several different models. Ideally, the output should be as follows:
-![image](https://github.com/Arloste/Text_Detox/assets/88305350/a8283270-d330-42ab-a725-6996741f6fcb)
+
+![image](https://github.com/Arloste/Text_Detox/assets/88305350/59cbde0a-5c64-41b7-9e23-0b711ede635d)
+
 
 ### Making predictions in a command line
 It is possible to make a prediction on a single sentence from the terminal.
 1. Open the terminal in the root folder of the project
 2. Type `sh script.sh predict <model_name> terminal <prompt>`. The program should write the result in the terminal. Here is an example:
-![image](https://github.com/Arloste/Text_Detox/assets/88305350/e6bf6fec-e07c-4829-952a-c660895107a9)
+
+![image](https://github.com/Arloste/Text_Detox/assets/88305350/142863f6-9a6e-4df0-b1ca-7f3d50f222f2)
+
 
 ### Making batch predictions from txt file
 1. Put a `references.txt` file into the `/data/` folder. This file should have one sentence on each line.
 2. Open the terminal in the root folder of the project
 3. Type `sh script.sh predict <model_name> txt`. The program will read the txt file line by line and make separate predictions for each line. Here is an example, although the output is not good:
-![image](https://github.com/Arloste/Text_Detox/assets/88305350/713c1bb8-6b7c-4eaf-a2df-79e1dc6e58a2)
+
+![image](https://github.com/Arloste/Text_Detox/assets/88305350/94374379-1e3d-4221-a35b-4c514f277f0a)
+
 
 ### Making batch predictions from pandas dataframe
 1. Put a `references.tsv` file into the `/data/` folder. The program will read the sentences in this file in the `references` column.
